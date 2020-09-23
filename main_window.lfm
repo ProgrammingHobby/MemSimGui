@@ -1,8 +1,122 @@
 object MainWindow: TMainWindow
   Left = 378
-  Height = 240
+  Height = 377
   Top = 250
-  Width = 320
+  Width = 629
   Caption = 'MainWindow'
-  LCLVersion = '2.0.10.0'
+  Menu = MainMenu
+  object MainMenu: TMainMenu
+    Left = 568
+    Top = 320
+    object menuFile: TMenuItem
+      Caption = 'Datei'
+      object menuOpen: TMenuItem
+        Action = actionOpen
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object menuQuit: TMenuItem
+        Action = actionQuit
+      end
+    end
+    object menuEdit: TMenuItem
+      Caption = 'Bearbeiten'
+      object menuErase: TMenuItem
+        Action = actionErase
+      end
+      object menuFill: TMenuItem
+        Action = actionFill
+      end
+      object menuCopy: TMenuItem
+        Action = actionCopy
+      end
+    end
+    object menuSimulator: TMenuItem
+      Caption = 'Simulator'
+      object menuEpromType: TMenuItem
+        Action = actionEpromType
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object menuUpload: TMenuItem
+        Action = actionUpload
+      end
+      object menuUploadReset: TMenuItem
+        Action = actionUploadReset
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object menuEmulationOn: TMenuItem
+        Action = actionEmulationOn
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object menuResetImpluse: TMenuItem
+        Action = actionResetImpulse
+      end
+      object menuResetDuration: TMenuItem
+        Action = actionResetDuration
+      end
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Hilfe'
+      object menuAbout: TMenuItem
+        Action = actionAbout
+      end
+    end
+  end
+  object ActionList: TActionList
+    Left = 480
+    Top = 320
+    object actionOpen: TAction
+      Caption = 'Open...'
+      ShortCut = 16463
+    end
+    object actionQuit: TAction
+      Caption = 'Beenden'
+    end
+    object actionErase: TAction
+      Caption = 'Löschen...'
+      ShortCut = 16460
+    end
+    object actionFill: TAction
+      Caption = 'Füllen...'
+      ShortCut = 16454
+    end
+    object actionCopy: TAction
+      Caption = 'Kopieren...'
+      ShortCut = 16459
+    end
+    object actionEpromType: TAction
+      Caption = 'EPROM-Typ...'
+      ShortCut = 116
+    end
+    object actionUpload: TAction
+      Caption = 'Hochladen...'
+      ShortCut = 117
+    end
+    object actionUploadReset: TAction
+      Caption = 'Hochladen mit Reset...'
+      ShortCut = 118
+    end
+    object actionEmulationOn: TAction
+      Caption = 'Emulation an...'
+      ShortCut = 119
+    end
+    object actionResetImpulse: TAction
+      Caption = 'Reset Impuls...'
+      ShortCut = 120
+    end
+    object actionResetDuration: TAction
+      Caption = 'Reset Dauer...'
+      ShortCut = 121
+    end
+    object actionAbout: TAction
+      Caption = 'Über MemSimGui...'
+    end
+  end
 end
