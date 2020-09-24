@@ -5,7 +5,8 @@ unit Main_Window;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ActnList;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ActnList,
+  ComCtrls, StdCtrls;
 
 type
 
@@ -16,7 +17,7 @@ type
     actionResetDuration: TAction;
     actionResetImpulse: TAction;
     actionEmulationOn: TAction;
-    actionUploadReset: TAction;
+    actionReset: TAction;
     actionUpload: TAction;
     actionEpromType: TAction;
     actionCopy: TAction;
@@ -25,6 +26,8 @@ type
     actionQuit: TAction;
     actionOpen: TAction;
     ActionList: TActionList;
+    comboboxEpromType: TComboBox;
+    ImageList: TImageList;
     MainMenu: TMainMenu;
     menuFile: TMenuItem;
     menuEdit: TMenuItem;
@@ -38,14 +41,25 @@ type
     menuResetDuration: TMenuItem;
     menuResetImpluse: TMenuItem;
     N4: TMenuItem;
-    N3: TMenuItem;
     N2: TMenuItem;
-    menuUploadReset: TMenuItem;
+    menuReset: TMenuItem;
     menuUpload: TMenuItem;
     menuQuit: TMenuItem;
     N1: TMenuItem;
     menuOpen: TMenuItem;
     menuSimulator: TMenuItem;
+    toolBar: TToolBar;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    ToolButton3: TToolButton;
+    ToolButton4: TToolButton;
+    toolbuttonEmulationOn: TToolButton;
+    toolbuttonReset: TToolButton;
+    toolbuttonUpload: TToolButton;
+    toolbuttonErase: TToolButton;
+    toolbuttonCopy: TToolButton;
+    toolbuttonFill: TToolButton;
+    toolbuttonOpen: TToolButton;
   private
 
   public
