@@ -1,87 +1,159 @@
 object MainWindow: TMainWindow
   Left = 378
-  Height = 377
+  Height = 434
   Top = 250
-  Width = 629
-  Caption = 'MainWindow'
-  ClientHeight = 377
-  ClientWidth = 629
+  Width = 778
+  Caption = 'memSim2 EPROM-Simulator '
+  ClientHeight = 434
+  ClientWidth = 778
   Menu = MainMenu
+  OnClose = FormClose
+  OnShow = FormShow
   object toolBar: TToolBar
     Left = 0
     Height = 34
     Top = 0
-    Width = 629
+    Width = 778
     ButtonHeight = 32
     ButtonWidth = 32
-    Caption = 'toolBar'
-    EdgeBorders = [ebLeft, ebTop]
+    EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+    EdgeOuter = esNone
     Images = ImageList
     TabOrder = 0
     object ToolButton1: TToolButton
-      Left = 3
-      Top = 2
+      Left = 2
+      Top = 1
       Enabled = False
     end
     object toolbuttonOpen: TToolButton
-      Left = 35
-      Top = 2
+      Left = 34
+      Hint = 'Öfnen (Strg+O)'
+      Top = 1
       Action = actionOpen
     end
     object ToolButton2: TToolButton
-      Left = 67
-      Top = 2
+      Left = 66
+      Top = 1
       Enabled = False
     end
     object toolbuttonFill: TToolButton
-      Left = 131
-      Top = 2
+      Left = 98
+      Top = 1
       Action = actionFill
     end
     object toolbuttonCopy: TToolButton
-      Left = 99
-      Top = 2
+      Left = 130
+      Top = 1
       Action = actionCopy
     end
     object toolbuttonErase: TToolButton
-      Left = 163
-      Top = 2
+      Left = 162
+      Top = 1
       Action = actionErase
     end
     object ToolButton3: TToolButton
-      Left = 195
-      Top = 2
+      Left = 194
+      Top = 1
       Enabled = False
     end
     object comboboxEpromType: TComboBox
-      Left = 227
+      Left = 226
       Height = 29
-      Top = 2
-      Width = 100
+      Top = 1
+      Width = 120
       ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        '2764 (8Kx8)'
+        '27128 (16Kx8)'
+        '27256 (32Kx8)'
+        '27512 (64Kx8)'
+        '27010 (128Kx8)'
+        '27020 (256Kx8)'
+        '27040 (512Kx8)'
+      )
       Style = csDropDownList
       TabOrder = 0
+      Text = '2764 (8Kx8)'
     end
     object ToolButton4: TToolButton
-      Left = 327
-      Top = 2
+      Left = 346
+      Top = 1
       Enabled = False
     end
     object toolbuttonUpload: TToolButton
-      Left = 359
-      Top = 2
+      Left = 378
+      Top = 1
       Action = actionUpload
     end
     object toolbuttonReset: TToolButton
-      Left = 391
-      Top = 2
+      Left = 474
+      Top = 1
       Action = actionReset
     end
-    object toolbuttonEmulationOn: TToolButton
-      Left = 423
-      Top = 2
-      Action = actionEmulationOn
+    object comboboxResetImpulse: TComboBox
+      Left = 506
+      Height = 29
+      Top = 1
+      Width = 100
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'keiner'
+        'positiv'
+        'negativ'
+      )
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'keiner'
     end
+    object comboboxResetDuration: TComboBox
+      Left = 606
+      Height = 29
+      Top = 1
+      Width = 100
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        '10ms'
+        '25ms'
+        '50ms'
+        '100ms'
+        '150ms'
+        '200ms'
+      )
+      Style = csDropDownList
+      TabOrder = 2
+      Text = '10ms'
+    end
+    object toolbuttonEmulationOn: TToolButton
+      Left = 410
+      Hint = 'Emulation ein/aus (F7)'
+      Top = 1
+      Action = actionEmulationOn
+      ParentShowHint = False
+    end
+    object ToolButton5: TToolButton
+      Left = 442
+      Top = 1
+      Enabled = False
+    end
+    object ToolButton6: TToolButton
+      Left = 706
+      Top = 1
+      Enabled = False
+    end
+  end
+  object statusBar: TStatusBar
+    Left = 0
+    Height = 19
+    Top = 415
+    Width = 778
+    Panels = <    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
   end
   object MainMenu: TMainMenu
     Images = ImageList
@@ -834,6 +906,7 @@ object MainWindow: TMainWindow
     Top = 320
     object actionOpen: TAction
       Caption = 'Open...'
+      Hint = 'Öffnet eine Datei und lädt diese in den Pufferspeicher.'
       ImageIndex = 7
       ShortCut = 16463
     end
@@ -842,16 +915,19 @@ object MainWindow: TMainWindow
     end
     object actionErase: TAction
       Caption = 'Löschen...'
+      Hint = 'Pufferspeicher löschen (Strg+L)'
       ImageIndex = 2
       ShortCut = 16460
     end
     object actionFill: TAction
       Caption = 'Füllen...'
+      Hint = 'Pufferspeicher füllen (Strg+F)'
       ImageIndex = 3
       ShortCut = 16454
     end
     object actionCopy: TAction
       Caption = 'Kopieren...'
+      Hint = 'Daten im Pufferspeicher kopieren (Strg+K)'
       ImageIndex = 1
       ShortCut = 16459
     end
@@ -862,17 +938,21 @@ object MainWindow: TMainWindow
     end
     object actionUpload: TAction
       Caption = 'Hochladen...'
+      Hint = 'Pufferspeicher zum Simulator hochladen (F6)'
       ImageIndex = 10
       ShortCut = 117
     end
     object actionReset: TAction
       Caption = 'Reset...'
+      Hint = 'Resetimpuls auslösen (F8)'
       ImageIndex = 8
       ShortCut = 119
     end
     object actionEmulationOn: TAction
       Caption = 'Emulation an...'
+      Hint = 'Emulation des gewählten EPROM Typ ein/ausschalten.'
       ImageIndex = 11
+      OnExecute = actionEmulationOnExecute
       ShortCut = 118
     end
     object actionResetImpulse: TAction

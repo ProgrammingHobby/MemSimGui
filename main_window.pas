@@ -26,6 +26,8 @@ type
     actionQuit: TAction;
     actionOpen: TAction;
     ActionList: TActionList;
+    comboboxResetImpulse: TComboBox;
+    comboboxResetDuration: TComboBox;
     comboboxEpromType: TComboBox;
     ImageList: TImageList;
     MainMenu: TMainMenu;
@@ -48,11 +50,14 @@ type
     N1: TMenuItem;
     menuOpen: TMenuItem;
     menuSimulator: TMenuItem;
+    statusBar: TStatusBar;
     toolBar: TToolBar;
     ToolButton1: TToolButton;
     ToolButton2: TToolButton;
     ToolButton3: TToolButton;
     ToolButton4: TToolButton;
+    ToolButton5: TToolButton;
+    ToolButton6: TToolButton;
     toolbuttonEmulationOn: TToolButton;
     toolbuttonReset: TToolButton;
     toolbuttonUpload: TToolButton;
@@ -60,6 +65,9 @@ type
     toolbuttonCopy: TToolButton;
     toolbuttonFill: TToolButton;
     toolbuttonOpen: TToolButton;
+    procedure actionEmulationOnExecute(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -72,6 +80,28 @@ var
 implementation
 
 {$R *.lfm}
+
+uses uscaledpi;
+
+{ TMainWindow }
+
+// --------------------------------------------------------------------------------
+procedure TMainWindow.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+    CloseAction := caFree;
+end;
+
+procedure TMainWindow.actionEmulationOnExecute(Sender: TObject);
+begin
+  //
+end;
+
+// --------------------------------------------------------------------------------
+procedure TMainWindow.FormShow(Sender: TObject);
+begin
+  self.SetAutoSize(True);
+    ScaleDPI(self, 96);
+end;
 
 end.
 
