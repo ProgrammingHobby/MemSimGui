@@ -567,6 +567,27 @@ object MainWindow: TMainWindow
           0000000000000000000000000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000
         }
+        object menu2764: TMenuItem
+          Caption = '2764 (8Kx8)'
+        end
+        object menu27128: TMenuItem
+          Caption = '27128 (16Kx8)'
+        end
+        object menu27256: TMenuItem
+          Caption = '27256 (32Kx8)'
+        end
+        object menu27512: TMenuItem
+          Caption = '27512 (64Kx8)'
+        end
+        object menu27010: TMenuItem
+          Caption = '27010 (128Kx8)'
+        end
+        object menu27020: TMenuItem
+          Caption = '27020 (256Kx8)'
+        end
+        object menu27040: TMenuItem
+          Caption = '27040 (512Kx8)'
+        end
       end
       object N2: TMenuItem
         Caption = '-'
@@ -813,9 +834,36 @@ object MainWindow: TMainWindow
       end
       object menuResetImpluse: TMenuItem
         Action = actionResetImpulse
+        object menuNoReset: TMenuItem
+          Caption = 'keine'
+        end
+        object menuPositiveReset: TMenuItem
+          Caption = 'positiv'
+        end
+        object menuNegativeReset: TMenuItem
+          Caption = 'negativ'
+        end
       end
       object menuResetDuration: TMenuItem
         Action = actionResetDuration
+        object menu10ms: TMenuItem
+          Caption = '10ms'
+        end
+        object menu25ms: TMenuItem
+          Caption = '25ms'
+        end
+        object menu50ms: TMenuItem
+          Caption = '50ms'
+        end
+        object menu100ms: TMenuItem
+          Caption = '100ms'
+        end
+        object menu150ms: TMenuItem
+          Caption = '150ms'
+        end
+        object menu200ms: TMenuItem
+          Caption = '200ms'
+        end
       end
     end
     object MenuItem1: TMenuItem
@@ -923,6 +971,7 @@ object MainWindow: TMainWindow
       Caption = 'Füllen...'
       Hint = 'Pufferspeicher füllen (Strg+F)'
       ImageIndex = 3
+      OnExecute = actionFillExecute
       ShortCut = 16454
     end
     object actionCopy: TAction
@@ -934,7 +983,6 @@ object MainWindow: TMainWindow
     object actionEpromType: TAction
       Caption = 'EPROM-Typ...'
       ImageIndex = 9
-      ShortCut = 116
     end
     object actionUpload: TAction
       Caption = 'Hochladen...'
@@ -952,16 +1000,13 @@ object MainWindow: TMainWindow
       Caption = 'Emulation an...'
       Hint = 'Emulation des gewählten EPROM Typ ein/ausschalten.'
       ImageIndex = 11
-      OnExecute = actionEmulationOnExecute
       ShortCut = 118
     end
     object actionResetImpulse: TAction
       Caption = 'Reset Impuls...'
-      ShortCut = 120
     end
     object actionResetDuration: TAction
       Caption = 'Reset Dauer...'
-      ShortCut = 121
     end
     object actionAbout: TAction
       Caption = 'Über MemSimGui...'

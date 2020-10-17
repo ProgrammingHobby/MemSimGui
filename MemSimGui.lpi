@@ -17,6 +17,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MinorVersionNr Value="1"/>
+      <Language Value="0407"/>
     </VersionInfo>
     <BuildModes Count="3">
       <Item1 Name="Default" Default="True"/>
@@ -106,7 +107,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="MemSimGui.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -119,6 +120,14 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main_Window"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="buffer_fill.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="BufferFill"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Buffer_Fill"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -1,0 +1,403 @@
+object BufferFill: TBufferFill
+  Left = 1520
+  Height = 333
+  Top = 250
+  Width = 383
+  AutoSize = True
+  Caption = 'Füllen des Puffers mit einem Bitmuster'
+  ChildSizing.LeftRightSpacing = 8
+  ChildSizing.TopBottomSpacing = 8
+  ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+  ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+  ChildSizing.Layout = cclLeftToRightThenTopToBottom
+  ChildSizing.ControlsPerLine = 2
+  ClientHeight = 333
+  ClientWidth = 383
+  OnClose = FormClose
+  OnShow = FormShow
+  object panelLeft: TPanel
+    Left = 8
+    Height = 317
+    Top = 8
+    Width = 242
+    AutoSize = True
+    BevelOuter = bvNone
+    ChildSizing.VerticalSpacing = 4
+    ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+    ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 317
+    ClientWidth = 242
+    TabOrder = 0
+    object groupboxFillArea: TGroupBox
+      Left = 0
+      Height = 84
+      Top = 0
+      Width = 242
+      AutoSize = True
+      Caption = ' Bereich '
+      ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+      ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 66
+      ClientWidth = 240
+      TabOrder = 0
+      object panelArea: TPanel
+        Left = 0
+        Height = 66
+        Top = 0
+        Width = 117
+        BevelOuter = bvNone
+        ChildSizing.LeftRightSpacing = 8
+        ChildSizing.TopBottomSpacing = 8
+        ChildSizing.HorizontalSpacing = 8
+        ChildSizing.VerticalSpacing = 4
+        ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+        ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+        ChildSizing.Layout = cclTopToBottomThenLeftToRight
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 66
+        ClientWidth = 117
+        TabOrder = 0
+        object labelAreaStart: TLabel
+          Left = 8
+          Height = 23
+          Top = 8
+          Width = 28
+          Caption = 'Start'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object labelAreaEnd: TLabel
+          Left = 8
+          Height = 23
+          Top = 35
+          Width = 28
+          Caption = 'Ende'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object editAreaStart: TMaskEdit
+          Left = 44
+          Height = 23
+          Top = 8
+          Width = 65
+          AutoSelect = False
+          AutoSize = False
+          CharCase = ecNormal
+          Constraints.MaxWidth = 65
+          MaxLength = 4
+          TabOrder = 0
+          EditMask = 'HHHH'
+          Text = 'HHHH'
+          SpaceChar = '_'
+        end
+        object editAreaEnd: TMaskEdit
+          Left = 44
+          Height = 23
+          Top = 35
+          Width = 65
+          AutoSelect = False
+          AutoSize = False
+          CharCase = ecNormal
+          Constraints.MaxWidth = 65
+          MaxLength = 4
+          TabOrder = 1
+          EditMask = 'HHHH'
+          Text = 'HHHH'
+          SpaceChar = '_'
+        end
+      end
+      object panelLength: TPanel
+        Left = 117
+        Height = 66
+        Top = 0
+        Width = 123
+        BevelOuter = bvNone
+        ChildSizing.LeftRightSpacing = 8
+        ChildSizing.TopBottomSpacing = 8
+        ChildSizing.HorizontalSpacing = 8
+        ChildSizing.VerticalSpacing = 8
+        ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+        ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 66
+        ClientWidth = 123
+        TabOrder = 1
+        object labelAreaLength: TLabel
+          Left = 8
+          Height = 23
+          Top = 22
+          Width = 34
+          Caption = 'Länge'
+          Layout = tlCenter
+          ParentColor = False
+        end
+        object editAreaLength: TMaskEdit
+          Left = 50
+          Height = 23
+          Top = 22
+          Width = 65
+          AutoSelect = False
+          AutoSize = False
+          CharCase = ecNormal
+          Constraints.MaxWidth = 65
+          MaxLength = 4
+          TabOrder = 0
+          EditMask = 'HHHH'
+          Text = 'HHHH'
+          SpaceChar = '_'
+        end
+      end
+    end
+    object groupboxWordSize: TGroupBox
+      Left = 0
+      Height = 124
+      Top = 88
+      Width = 242
+      AutoSize = True
+      Caption = ' Wortbreite '
+      ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+      ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 106
+      ClientWidth = 240
+      TabOrder = 1
+      object panelWordSize: TPanel
+        Left = 29
+        Height = 106
+        Top = 0
+        Width = 72
+        BevelOuter = bvNone
+        ChildSizing.LeftRightSpacing = 8
+        ChildSizing.TopBottomSpacing = 8
+        ChildSizing.HorizontalSpacing = 8
+        ChildSizing.VerticalSpacing = 2
+        ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+        ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 106
+        ClientWidth = 72
+        TabOrder = 0
+        object radiobutton8Bit: TRadioButton
+          Left = 8
+          Height = 21
+          Top = 8
+          Width = 56
+          AutoSize = False
+          Caption = '8 Bit'
+          Checked = True
+          TabOrder = 0
+          TabStop = True
+        end
+        object radiobutton16Bit: TRadioButton
+          Left = 8
+          Height = 21
+          Top = 31
+          Width = 56
+          AutoSize = False
+          Caption = '16 Bit'
+          TabOrder = 1
+        end
+        object radiobutton24Bit: TRadioButton
+          Left = 8
+          Height = 21
+          Top = 54
+          Width = 56
+          AutoSize = False
+          Caption = '24 Bit'
+          TabOrder = 2
+        end
+        object radiobutton32Bit: TRadioButton
+          Left = 8
+          Height = 21
+          Top = 77
+          Width = 56
+          AutoSize = False
+          Caption = '32 Bit'
+          TabOrder = 3
+        end
+      end
+      object panelLsbFirst: TPanel
+        Left = 130
+        Height = 106
+        Top = 0
+        Width = 83
+        BevelOuter = bvNone
+        ClientHeight = 106
+        ClientWidth = 83
+        TabOrder = 1
+        object checkboxLsbFirst: TCheckBox
+          Left = 0
+          Height = 21
+          Top = 8
+          Width = 83
+          Align = alTop
+          BorderSpacing.Top = 8
+          Caption = 'LSB zuerst'
+          TabOrder = 0
+        end
+      end
+    end
+    object groupboxFillPattern: TGroupBox
+      Left = 0
+      Height = 101
+      Top = 216
+      Width = 242
+      AutoSize = True
+      Caption = ' Füllmuster '
+      ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+      ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 83
+      ClientWidth = 240
+      TabOrder = 2
+      object panelFillPattern: TPanel
+        Left = 18
+        Height = 83
+        Top = 0
+        Width = 81
+        BevelOuter = bvNone
+        ChildSizing.LeftRightSpacing = 8
+        ChildSizing.TopBottomSpacing = 8
+        ChildSizing.HorizontalSpacing = 8
+        ChildSizing.VerticalSpacing = 8
+        ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+        ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 83
+        ClientWidth = 81
+        TabOrder = 0
+        object editFillPattern: TMaskEdit
+          Left = 8
+          Height = 23
+          Top = 30
+          Width = 65
+          AutoSelect = False
+          AutoSize = False
+          CharCase = ecNormal
+          Constraints.MaxWidth = 65
+          MaxLength = 4
+          TabOrder = 0
+          EditMask = 'HHHH'
+          Text = 'HHHH'
+          SpaceChar = '_'
+        end
+      end
+      object panelFillControl: TPanel
+        Left = 117
+        Height = 83
+        Top = 0
+        Width = 106
+        BevelOuter = bvNone
+        ChildSizing.LeftRightSpacing = 8
+        ChildSizing.TopBottomSpacing = 8
+        ChildSizing.HorizontalSpacing = 8
+        ChildSizing.VerticalSpacing = 2
+        ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
+        ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 83
+        ClientWidth = 106
+        TabOrder = 1
+        object radiobuttonConstant: TRadioButton
+          Left = 8
+          Height = 21
+          Top = 8
+          Width = 90
+          AutoSize = False
+          Caption = 'Konstant'
+          Checked = True
+          TabOrder = 0
+          TabStop = True
+        end
+        object radiobuttonIncrease: TRadioButton
+          Left = 8
+          Height = 21
+          Top = 31
+          Width = 90
+          AutoSize = False
+          Caption = 'Erhöhen'
+          TabOrder = 1
+        end
+        object radiobuttonDecrease: TRadioButton
+          Left = 8
+          Height = 21
+          Top = 54
+          Width = 90
+          AutoSize = False
+          Caption = 'Vermindern'
+          TabOrder = 2
+        end
+      end
+    end
+  end
+  object panelRight: TPanel
+    Left = 254
+    Height = 317
+    Top = 8
+    Width = 121
+    AutoSize = True
+    BorderSpacing.Around = 4
+    BevelOuter = bvNone
+    ClientHeight = 317
+    ClientWidth = 121
+    TabOrder = 1
+    object statictextHex: TStaticText
+      Left = 0
+      Height = 19
+      Top = 8
+      Width = 121
+      Align = alTop
+      AutoSize = True
+      BorderSpacing.Top = 8
+      BorderStyle = sbsSunken
+      Caption = ' Alle Angaben in HEX '
+      TabOrder = 0
+    end
+    object buttonFill: TButton
+      Left = 16
+      Height = 25
+      Top = 218
+      Width = 89
+      Align = alBottom
+      BorderSpacing.Left = 8
+      BorderSpacing.Right = 8
+      BorderSpacing.Around = 8
+      Caption = 'Füllen'
+      TabOrder = 1
+    end
+    object buttonCancel: TButton
+      Left = 16
+      Height = 25
+      Top = 251
+      Width = 89
+      Align = alBottom
+      BorderSpacing.Left = 8
+      BorderSpacing.Right = 8
+      BorderSpacing.Around = 8
+      Caption = 'Abbruch'
+      TabOrder = 2
+    end
+    object buttonHelp: TButton
+      Left = 16
+      Height = 25
+      Top = 284
+      Width = 89
+      Align = alBottom
+      BorderSpacing.Left = 8
+      BorderSpacing.Right = 8
+      BorderSpacing.Around = 8
+      Caption = 'Hilfe'
+      TabOrder = 3
+    end
+  end
+end
