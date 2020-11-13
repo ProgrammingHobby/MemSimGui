@@ -29,6 +29,7 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="Sources"/>
             <UnitOutputDirectory Value="$(TargetCPU)-$(TargetOS)_debug/lib"/>
           </SearchPaths>
           <Parsing>
@@ -113,7 +114,7 @@
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="main_window.pas"/>
+        <Filename Value="Sources/main_window.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MainWindow"/>
         <HasResources Value="True"/>
@@ -121,7 +122,7 @@
         <UnitName Value="Main_Window"/>
       </Unit1>
       <Unit2>
-        <Filename Value="buffer_fill.pas"/>
+        <Filename Value="Sources/buffer_fill.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="BufferFill"/>
         <HasResources Value="True"/>
